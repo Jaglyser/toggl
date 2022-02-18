@@ -22,7 +22,7 @@ auth = {
 
 toggl = Toggl("024e1d7952cfc53aa6aa94644168f363")
 data = toggl.request(
-    "https://api.track.toggl.com/reports/api/v2/details", params)
+    "https://api.track.toggl.com/reports/api/v2/project", params)
 print(data)
 json_data = toggl.pretty_json(data)
 print(json_data)
