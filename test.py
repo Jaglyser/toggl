@@ -4,23 +4,10 @@ from pytest import param
 import requests as rq
 from requests.auth import HTTPBasicAuth
 import json
+import dotenv
+dotenv.load_dotenv()
 
-params = {
-    "user_agent": "joel.wallner-blomster@triggerfish.se",
-    "workspace_id": "598248",
-    "calculate": "time"
-}
-
-headers = {
-    "Content-Type": "text",
-}
-
-auth = {
-    "username": "api_token",
-    "password": "024e1d7952cfc53aa6aa94644168f363"
-}
-
-toggl = Toggl("024e1d7952cfc53aa6aa94644168f363")
+toggl = Toggl(API_KEY)
 data = toggl.request(
     "https://api.track.toggl.com/reports/api/v2/project", params)
 print(data)
